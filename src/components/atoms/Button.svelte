@@ -8,7 +8,7 @@
 
 <style lang="postcss">
   .green {
-    @apply bg-green-500 border-green-600;
+    @apply bg-green-500;
   }
   .yellow {
     @apply bg-yellow-500;
