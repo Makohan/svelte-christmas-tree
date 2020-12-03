@@ -1,4 +1,6 @@
 <script lang="ts">
 </script>
 
-<canvas class="w-full h-full" on:click />
+<div class="w-full h-full" on:click>
+  <slot />
+</div>
