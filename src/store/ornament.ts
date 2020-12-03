@@ -5,18 +5,35 @@ export const ornamentType = {
   bell: "bell",
 };
 
+export type Ornament = {
+  type: keyof typeof ornamentType;
+  colorHex: string;
+};
+
 function createOrnament() {
-  const defaultState = ornamentType.tree;
+  const defaultState: Ornament = {
+    type: "tree",
+    colorHex: "#1fa782",
+  };
   const self = writable(defaultState);
 
   return {
     subscribe: self.subscribe,
-    get: () => get(self) as keyof typeof ornamentType,
+    get: () => get(self),
     setTree: () => {
-      self.set(ornamentType.tree);
+      self.update(
+        (value) => (value = { type: "tree", colorHex: value.colorHex })
+      );
     },
     setBell: () => {
-      self.set(ornamentType.bell);
+      self.update(
+        (value) => (value = { type: "bell", colorHex: value.colorHex })
+      );
+    },
+    setColor: (colorHex: string) => {
+      self.update(
+        (value) => (value = { type: value.type, colorHex: colorHex })
+      );
     },
   };
 }

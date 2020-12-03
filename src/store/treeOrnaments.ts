@@ -1,11 +1,10 @@
 import { writable } from "svelte/store";
-import type { ornamentType } from "./ornament";
+import type { Ornament } from "./ornament";
 
 export type TreeOrnament = {
   x: number;
   y: number;
-  ornament: keyof typeof ornamentType;
-  color: string;
+  ornament: Ornament;
 };
 
 function createTreeOrnaments() {
@@ -14,15 +13,16 @@ function createTreeOrnaments() {
 
   return {
     subscribe,
-    push: (x: number, y: number, ornament: keyof typeof ornamentType) => {
-      console.log(`put x=${x} y=${y} ornament:${ornament}`);
+    push: (x: number, y: number, ornament: Ornament) => {
+      console.log(
+        `put x=${x} y=${y} ornament:${ornament.type} color:${ornament.colorHex}`
+      );
       update((treeOrnament) => [
         ...treeOrnament,
         {
           x,
           y,
           ornament,
-          color: "green-300",
         },
       ]);
     },
