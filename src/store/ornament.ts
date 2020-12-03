@@ -13,7 +13,7 @@ export type Ornament = {
 function createOrnament() {
   const defaultState: Ornament = {
     type: "tree",
-    colorHex: "#1fa782",
+    colorHex: "#a2C09e",
   };
   const self = writable(defaultState);
 

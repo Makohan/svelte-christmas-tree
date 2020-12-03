@@ -5,19 +5,22 @@
   import type { TreeOrnament } from "../../store/treeOrnaments";
   import Ornament from "../atoms/Ornament.svelte";
 
+  const DEFAULT_TREE_COLOR = "#a2C09e";
+  const DEFAULT_BELL_COLOR = "#ECF71E";
+
   function handleClickTree() {
     ornament.setTree();
+    ornament.setColor(DEFAULT_TREE_COLOR);
   }
   function handleClickBell() {
     ornament.setBell();
+    ornament.setColor(DEFAULT_BELL_COLOR);
   }
   function handleChangeColor(event) {
     ornament.setColor(event.target.value);
   }
   function handleClickCanvas(event: MouseEvent) {
-    const x = event.pageX; // 水平の位置座標
-    const y = event.pageY; // 垂直の位置座標
-    treeOrnaments.push(x, y, ornament.get());
+    treeOrnaments.push(event.pageX, event.pageY, ornament.get());
   }
 
   let isActiveTree = false;
