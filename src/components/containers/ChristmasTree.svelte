@@ -19,14 +19,18 @@
 
   function createMainTree() {
     const centerX = window.innerWidth / 2;
-    const centerY = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    console.log({ centerX });
+    console.log({ centerY });
+
     const ornament: Ornament = {
       type: "tree",
       colorHex: DEFAULT_TREE_COLOR,
-      size: "20xl",
+      size: "25xl",
     };
 
-    treeOrnaments.push(centerX - 110, centerY + 40, ornament);
+    treeOrnaments.push(centerX - 140, centerY - 150, ornament);
   }
 
   function handleClickBell() {
