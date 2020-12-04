@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let color;
-  export let isActive: boolean;
+  export let color = "";
+  export let isActive: boolean = false;
   export let classes = "";
 
   let classValue = `text-xl px-4 py-1 rounded-lg border ${classes}`;

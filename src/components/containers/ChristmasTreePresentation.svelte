@@ -1,11 +1,14 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import AppButton from "../atoms/AppButton.svelte";
   import AppColorPicker from "../atoms/AppColorPicker.svelte";
   import AppIcon from "../atoms/AppIcon.svelte";
   import AppCanvas from "../atoms/AppCanvas.svelte";
   import Footer from "../common/Footer.svelte";
   import Header from "../common/Header.svelte";
+  import type { TreeOrnament } from "../../store/treeOrnaments";
 
+  // イベント処理
   export let handleClickBell: () => void;
   export let handleClickStar: () => void;
   export let handleClickCat: () => void;
@@ -13,11 +16,15 @@
   export let handleClickRollback: () => void;
   export let handleClickCanvas: (e: MouseEvent) => void;
 
+  // 全ての飾り付け
+  export let allOrnaments: TreeOrnament[];
+
+  // ボタンの非活性
   export let isActiveBell: boolean;
   export let isActiveStar: boolean;
   export let isActiveCat: boolean;
 
-  export let defaultColor: string;
+  export let colorPickerColor: string;
 </script>
 
 <Header />
@@ -32,14 +39,24 @@
   <AppButton on:click={handleClickCat} color="white" isActive={isActiveCat}>
     <AppIcon id="cat" />
   </AppButton>
-  <AppColorPicker on:change={handleChangeColor} value={defaultColor} />
+  <AppColorPicker on:change={handleChangeColor} value={colorPickerColor} />
   <AppButton on:click={handleClickRollback} classes="float-right mr-2">
     戻す
   </AppButton>
 </div>
 <div class="h-full rounded-lg bg-indigo-900 mx-2 mb-1">
   <AppCanvas on:click={(event) => handleClickCanvas(event)}>
-    <slot />
+    {#each allOrnaments as treeOrnament (treeOrnament.id)}
+      <span
+        transition:fade
+        class="absolute"
+        style="left: {treeOrnament.x}px; top: {treeOrnament.y}px;">
+        <AppIcon
+          id={treeOrnament.ornament.type}
+          colorHex={treeOrnament.ornament.colorHex}
+          size={treeOrnament.ornament.size} />
+      </span>
+    {/each}
   </AppCanvas>
 </div>
 
