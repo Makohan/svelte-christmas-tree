@@ -2,7 +2,7 @@
   import Icon from "../atoms/Icon.svelte";
 </script>
 
-<header>
+<header class="p-1">
   <h1>
     <Icon id="cat" />クリックしてツリーを飾るニャ〜
   </h1>

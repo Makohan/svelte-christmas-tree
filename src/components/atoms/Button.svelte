@@ -1,6 +1,9 @@
 <script lang="ts">
   export let color;
   export let isActive: boolean;
+  export let classes = "";
+
+  let classValue = `text-xl px-4 py-1 rounded-lg border ${classes}`;
 
   const green = color === "green";
   const yellow = color === "yellow";
@@ -24,7 +27,7 @@
 </style>
 
 <button
-  class="text-xl px-4 py-1 m-2 rounded border border-gray-300"
+  class={classValue}
   on:click
   class:green={green && isActive}
   class:yellow={yellow && isActive}

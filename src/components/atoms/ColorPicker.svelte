@@ -2,4 +2,4 @@
   export let value: string;
 </script>
 
-<input type="color" id="head" name="head" on:change {value} />
+<input type="color" on:change {value} />
