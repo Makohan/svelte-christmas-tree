@@ -1,6 +1,7 @@
 {
   "name": "christmas-tree-decorator",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
