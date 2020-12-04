@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Icon from "../atoms/Icon.svelte";
+  import AppIcon from "../atoms/AppIcon.svelte";
 </script>
 
 <header class="p-1">
   <h1>
-    <Icon id="cat" />クリックしてツリーを飾るニャ〜
+    <AppIcon id="cat" />クリックしてツリーを飾るニャ〜
   </h1>
 </header>

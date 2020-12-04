@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import ChristmasTreePresentation from "./ChristmasTreePresentation.svelte";
-  import Icon from "../atoms/Icon.svelte";
+  import AppIcon from "../atoms/AppIcon.svelte";
   import { ornament } from "../../store/ornament";
   import type { Ornament } from "../../store/ornament";
   import { treeOrnaments } from "../../store/treeOrnaments";
@@ -86,7 +86,7 @@
       transition:fade
       class="absolute"
       style="left: {treeOrnament.x}px; top: {treeOrnament.y}px;">
-      <Icon
+      <AppIcon
         id={treeOrnament.ornament.type}
         colorHex={treeOrnament.ornament.colorHex}
         size={treeOrnament.ornament.size} />
