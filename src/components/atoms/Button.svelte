@@ -1,10 +1,11 @@
 <script lang="ts">
-  export let color: "green" | "yellow" | "red";
+  export let color;
   export let isActive: boolean;
 
   const green = color === "green";
   const yellow = color === "yellow";
   const red = color === "red";
+  const white = color === "white";
 </script>
 
 <style type="text/postcss">
@@ -17,6 +18,9 @@
   .red {
     @apply bg-red-500;
   }
+  .white {
+    @apply bg-gray-200;
+  }
 </style>
 
 <button
@@ -24,6 +28,7 @@
   on:click
   class:green={green && isActive}
   class:yellow={yellow && isActive}
+  class:white={white && isActive}
   class:red={red && isActive}>
   <slot />
 </button>

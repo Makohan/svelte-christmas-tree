@@ -11,6 +11,7 @@
   const DEFAULT_TREE_COLOR = "#a2C09e";
   const DEFAULT_BELL_COLOR = "#D60068";
   const DEFAULT_STAR_COLOR = "#ECF71E";
+  const DEFAULT_CAT_COLOR = "#ffffff";
 
   onMount(() => {
     handleClickBell();
@@ -20,10 +21,6 @@
   function createMainTree() {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
-
-    console.log({ centerX });
-    console.log({ centerY });
-
     const ornament: Ornament = {
       type: "tree",
       colorHex: DEFAULT_TREE_COLOR,
@@ -41,20 +38,29 @@
     ornament.setIcon("star");
     ornament.setColor(DEFAULT_STAR_COLOR);
   }
+  function handleClickCat() {
+    ornament.setIcon("cat");
+    ornament.setColor(DEFAULT_CAT_COLOR);
+  }
   function handleChangeColor(event: any) {
     ornament.setColor(event.target.value);
   }
   function handleClickCanvas(event: MouseEvent) {
     treeOrnaments.push(event.pageX, event.pageY, ornament.get());
   }
+  function handleClickRollback() {
+    treeOrnaments.rollback();
+  }
 
   let isActiveStar = false;
   let isActiveBell = false;
+  let isActiveCat = false;
   let defaultColor: string;
 
   ornament.subscribe((currentOrnament) => {
     isActiveStar = currentOrnament.type === "star";
     isActiveBell = currentOrnament.type === "bell";
+    isActiveCat = currentOrnament.type === "cat";
     defaultColor = currentOrnament.colorHex;
   });
 
@@ -67,10 +73,13 @@
 <ChristmasTreePresentation
   {handleClickBell}
   {handleClickStar}
+  {handleClickCat}
   {handleChangeColor}
+  {handleClickRollback}
   {handleClickCanvas}
   {isActiveBell}
   {isActiveStar}
+  {isActiveCat}
   {defaultColor}>
   {#each allOrnaments as treeOrnament (treeOrnament.id)}
     <span

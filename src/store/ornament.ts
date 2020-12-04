@@ -4,6 +4,7 @@ export const ornamentType = {
   bell: "bell",
   star: "star",
   tree: "tree",
+  cat: "cat",
 };
 
 export type Ornament = {

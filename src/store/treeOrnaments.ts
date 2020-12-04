@@ -22,8 +22,8 @@ function createTreeOrnaments() {
     push: (x: number, y: number, ornament: Ornament) => {
       const adjustX = x - 10;
       const adjustY = y - 10;
-      update((treeOrnament) => [
-        ...treeOrnament,
+      update((values) => [
+        ...values,
         {
           id: createId(),
           x: adjustX,
@@ -31,6 +31,13 @@ function createTreeOrnaments() {
           ornament,
         },
       ]);
+    },
+    rollback: () => {
+      update((values) => {
+        if (values.length === 1) return values;
+        const newValues = [...values].splice(0, values.length - 1);
+        return newValues;
+      });
     },
   };
 }
