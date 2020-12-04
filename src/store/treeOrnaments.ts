@@ -20,15 +20,14 @@ function createTreeOrnaments() {
   return {
     subscribe,
     push: (x: number, y: number, ornament: Ornament) => {
-      console.log(
-        `put x=${x} y=${y} ornament:${ornament.type} color:${ornament.colorHex}`
-      );
+      const adjustX = x - 10;
+      const adjustY = y - 10;
       update((treeOrnament) => [
         ...treeOrnament,
         {
           id: createId(),
-          x,
-          y,
+          x: adjustX,
+          y: adjustY,
           ornament,
         },
       ]);
