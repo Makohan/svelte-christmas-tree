@@ -10,6 +10,9 @@ module.exports = {
           500: "#ECF71E",
         },
       },
+      fontSize: {
+        "20xl": "20rem",
+      },
     },
   },
   variants: {},

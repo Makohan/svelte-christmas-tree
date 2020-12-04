@@ -8,6 +8,6 @@
   @tailwind utilities;
 </style>
 
-<main class="text-center p-1 m-auto max-w-prose h-5/6">
+<main class="text-center p-1 m-auto max-w-prose max-h-full h-5/6">
   <ChristmasTree />
 </main>

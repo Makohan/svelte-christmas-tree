@@ -1,26 +1,26 @@
 <script lang="ts">
   import Button from "../atoms/Button.svelte";
   import ColorPicker from "../atoms/ColorPicker.svelte";
-  import Ornament from "../atoms/Ornament.svelte";
+  import Ornament from "../atoms/Icon.svelte";
   import Canvas from "../common/Canvas.svelte";
 
-  export let handleClickTree: () => void;
   export let handleClickBell: () => void;
-  export let handleClickCanvas: (MouseEvent) => void;
-  export let handleChangeColor: (MouseEvent) => void;
+  export let handleClickStar: () => void;
+  export let handleChangeColor: (e: any) => void;
+  export let handleClickCanvas: (e: MouseEvent) => void;
 
-  export let isActiveTree: boolean;
   export let isActiveBell: boolean;
+  export let isActiveStar: boolean;
 
   export let defaultColor: string;
 </script>
 
 <div class="m-2">
-  <Button on:click={handleClickTree} color="green" isActive={isActiveTree}>
-    <Ornament id="tree" />
-  </Button>
-  <Button on:click={handleClickBell} color="yellow" isActive={isActiveBell}>
+  <Button on:click={handleClickBell} color="red" isActive={isActiveBell}>
     <Ornament id="bell" />
+  </Button>
+  <Button on:click={handleClickStar} color="yellow" isActive={isActiveStar}>
+    <Ornament id="star" />
   </Button>
   <ColorPicker on:change={handleChangeColor} value={defaultColor} />
 </div>
