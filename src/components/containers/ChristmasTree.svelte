@@ -59,7 +59,6 @@
   });
 </script>
 
-<Icon id="cat" />
 <ChristmasTreePresentation
   {handleClickBell}
   {handleClickStar}

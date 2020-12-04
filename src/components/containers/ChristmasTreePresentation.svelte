@@ -2,6 +2,7 @@
   import Button from "../atoms/Button.svelte";
   import ColorPicker from "../atoms/ColorPicker.svelte";
   import Ornament from "../atoms/Icon.svelte";
+  import Icon from "../atoms/Icon.svelte";
   import Canvas from "../common/Canvas.svelte";
 
   export let handleClickBell: () => void;
@@ -15,6 +16,10 @@
   export let defaultColor: string;
 </script>
 
+<div>
+  <Icon id="cat" />
+  <span>クリックしてツリーを飾るニャ〜</span>
+</div>
 <div class="m-2">
   <Button on:click={handleClickBell} color="red" isActive={isActiveBell}>
     <Ornament id="bell" />
