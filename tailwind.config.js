@@ -9,6 +9,9 @@ module.exports = {
         yellow: {
           500: "#ECF71E",
         },
+        red: {
+          500: "#D60068",
+        },
       },
       fontSize: {
         "20xl": "20rem",
