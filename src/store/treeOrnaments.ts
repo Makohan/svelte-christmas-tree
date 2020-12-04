@@ -2,10 +2,16 @@ import { writable } from "svelte/store";
 import type { Ornament } from "./ornament";
 
 export type TreeOrnament = {
+  id: string;
   x: number;
   y: number;
   ornament: Ornament;
 };
+
+function createId() {
+  const number = Math.random();
+  return number.toString(36).substr(2, 9);
+}
 
 function createTreeOrnaments() {
   const defaultState: TreeOrnament[] = [];
@@ -20,6 +26,7 @@ function createTreeOrnaments() {
       update((treeOrnament) => [
         ...treeOrnament,
         {
+          id: createId(),
           x,
           y,
           ornament,

@@ -67,7 +67,7 @@
   {isActiveBell}
   {isActiveStar}
   {defaultColor}>
-  {#each allOrnaments as treeOrnament}
+  {#each allOrnaments as treeOrnament (treeOrnament.id)}
     <span
       class="absolute"
       style="left: {treeOrnament.x}px; top: {treeOrnament.y}px;">
