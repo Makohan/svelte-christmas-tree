@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
   import ChristmasTreePresentation from "./ChristmasTreePresentation.svelte";
   import Icon from "../atoms/Icon.svelte";
   import { ornament } from "../../store/ornament";
@@ -69,6 +70,7 @@
   {defaultColor}>
   {#each allOrnaments as treeOrnament (treeOrnament.id)}
     <span
+      transition:fade
       class="absolute"
       style="left: {treeOrnament.x}px; top: {treeOrnament.y}px;">
       <Icon
