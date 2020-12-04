@@ -34,11 +34,11 @@
   }
 
   function handleClickBell() {
-    ornament.setBell();
+    ornament.setIcon("bell");
     ornament.setColor(DEFAULT_BELL_COLOR);
   }
   function handleClickStar() {
-    ornament.setStar();
+    ornament.setIcon("star");
     ornament.setColor(DEFAULT_STAR_COLOR);
   }
   function handleChangeColor(event: any) {

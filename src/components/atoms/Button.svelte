@@ -7,7 +7,7 @@
   const red = color === "red";
 </script>
 
-<style lang="postcss">
+<style type="text/postcss">
   .green {
     @apply bg-green-500;
   }

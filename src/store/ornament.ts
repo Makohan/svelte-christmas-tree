@@ -23,16 +23,10 @@ function createOrnament() {
   return {
     subscribe: self.subscribe,
     get: () => get(self),
-    setBell: () => {
+    setIcon: (type: keyof typeof ornamentType) => {
       self.update(
         (value) =>
-          (value = { type: "bell", colorHex: value.colorHex, size: value.size })
-      );
-    },
-    setStar: () => {
-      self.update(
-        (value) =>
-          (value = { type: "star", colorHex: value.colorHex, size: value.size })
+          (value = { type, colorHex: value.colorHex, size: value.size })
       );
     },
     setColor: (colorHex: string) => {

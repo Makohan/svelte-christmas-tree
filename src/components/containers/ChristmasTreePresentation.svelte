@@ -29,7 +29,7 @@
   </Button>
   <ColorPicker on:change={handleChangeColor} value={defaultColor} />
 </div>
-<div class="w-full h-full rounded bg-gray-200">
+<div class="w-full h-full rounded-lg bg-indigo-900">
   <Canvas on:click={(event) => handleClickCanvas(event)}>
     <slot />
   </Canvas>
