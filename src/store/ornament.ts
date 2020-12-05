@@ -24,7 +24,7 @@ function createOrnament() {
   return {
     subscribe: self.subscribe,
     get: () => get(self),
-    setOrnament: (type: keyof typeof ornamentType, colorHex: stri) => {
+    setOrnament: (type: keyof typeof ornamentType, colorHex: string) => {
       self.update((value) => (value = { type, colorHex, size: value.size }));
     },
     setColor: (colorHex: string) => {
