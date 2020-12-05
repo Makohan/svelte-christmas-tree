@@ -29,16 +29,16 @@
   }
 
   function handleClickBell() {
-    ornament.setOrnament("bell", DEFAULT_BELL_COLOR);
+    ornament.set({ type: "bell", colorHex: DEFAULT_BELL_COLOR });
   }
   function handleClickStar() {
-    ornament.setOrnament("star", DEFAULT_STAR_COLOR);
+    ornament.set({ type: "star", colorHex: DEFAULT_STAR_COLOR });
   }
   function handleClickCat() {
-    ornament.setOrnament("cat", DEFAULT_CAT_COLOR);
+    ornament.set({ type: "cat", colorHex: DEFAULT_CAT_COLOR });
   }
   function handleChangeColor(event: any) {
-    ornament.setColor(event.target.value);
+    ornament.set({ colorHex: event.target.value });
   }
   function handleClickCanvas(event: MouseEvent) {
     treeOrnaments.push(event.pageX, event.pageY, ornament.get());

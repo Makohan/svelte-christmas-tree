@@ -24,14 +24,12 @@ function createOrnament() {
   return {
     subscribe: self.subscribe,
     get: () => get(self),
-    setOrnament: (type: keyof typeof ornamentType, colorHex: string) => {
-      self.update((value) => (value = { type, colorHex, size: value.size }));
-    },
-    setColor: (colorHex: string) => {
-      self.update(
-        (value) =>
-          (value = { type: value.type, colorHex: colorHex, size: value.size })
-      );
+    set: (updateValues: {
+      type?: keyof typeof ornamentType;
+      colorHex?: string;
+      size?: string;
+    }) => {
+      self.update((value) => (value = { ...value, ...updateValues }));
     },
   };
 }
