@@ -29,16 +29,13 @@
   }
 
   function handleClickBell() {
-    ornament.setIcon("bell");
-    ornament.setColor(DEFAULT_BELL_COLOR);
+    ornament.setOrnament("bell", DEFAULT_BELL_COLOR);
   }
   function handleClickStar() {
-    ornament.setIcon("star");
-    ornament.setColor(DEFAULT_STAR_COLOR);
+    ornament.setOrnament("star", DEFAULT_STAR_COLOR);
   }
   function handleClickCat() {
-    ornament.setIcon("cat");
-    ornament.setColor(DEFAULT_CAT_COLOR);
+    ornament.setOrnament("cat", DEFAULT_CAT_COLOR);
   }
   function handleChangeColor(event: any) {
     ornament.setColor(event.target.value);
