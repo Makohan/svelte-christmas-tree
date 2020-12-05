@@ -44,17 +44,17 @@
     戻す
   </AppButton>
 </div>
-<div class="h-full rounded-lg bg-indigo-900 mx-2 mb-1">
+<div class="h-full mx-2 mb-1 bg-indigo-900 rounded-lg">
   <AppCanvas on:click={(event) => handleClickCanvas(event)}>
-    {#each allOrnaments as treeOrnament (treeOrnament.id)}
+    {#each allOrnaments as ornament (ornament.id)}
       <span
         transition:fade
         class="absolute"
-        style="left: {treeOrnament.x}px; top: {treeOrnament.y}px;">
+        style="left: {ornament.x}px; top: {ornament.y}px;">
         <AppIcon
-          id={treeOrnament.ornament.type}
-          colorHex={treeOrnament.ornament.colorHex}
-          size={treeOrnament.ornament.size} />
+          id={ornament.ornament.type}
+          colorHex={ornament.ornament.colorHex}
+          size={ornament.ornament.size} />
       </span>
     {/each}
   </AppCanvas>
